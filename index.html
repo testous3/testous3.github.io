@@ -10,43 +10,67 @@
       text-align: center;
       background-color: #f5f5f5;
       margin: 0;
-      padding: 0;
+      padding: 20px;
     }
-    .container { margin-top: 80px; }
-    img { width: 150px; height: auto; }
+    .container {
+      margin-top: 50px;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    img.logo {
+      width: 150px;
+      height: auto;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      color: #444;
+    }
     .btn {
       display: inline-block;
       margin-top: 20px;
-      padding: 0;
-      background: none;
       border: none;
+      background: none;
+    }
+    .instruction {
+      margin-top: 25px;
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 15px;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://play-lh.googleusercontent.com/nLSr9LB0QOH3YgiVhTcLR0vRsicCf3THbL0Hh72qM6pDjNGdcUcvMaom9WObWYYiNSGut5KzwtSOrMaqU3n-0w=w240-h480-rw" alt="Logo App">
+    <img class="logo" src="https://play-lh.googleusercontent.com/nLSr9LB0QOH3YgiVhTcLR0vRsicCf3THbL0Hh72qM6pDjNGdcUcvMaom9WObWYYiNSGut5KzwtSOrMaqU3n-0w=w240-h480-rw" alt="Logo App">
     <h1>Télécharger Surpriz</h1>
-    <button class="btn" id="openStore">
+    <p>Merci d’utiliser TikTok 💖</p>
+
+    <button class="btn" onclick="openStore()">
       <img src="https://logo-marque.com/wp-content/uploads/2020/11/Google-Play-Logo.png" alt="Play Store" style="width:180px; height:auto;">
     </button>
+
+    <div class="instruction">
+      ⚠️ Si le lien ne s’ouvre pas :<br>
+      • Appuie sur les trois points <b>(⋯)</b> en haut à droite.<br>
+      • Sélectionne <b>“Ouvrir dans le navigateur”</b>.<br>
+      • Puis télécharge l’application depuis le Play Store ✅
+    </div>
   </div>
 
   <script>
-    const storeUrl = "https://play.google.com/store/apps/details?id=com.app.surpriz";
-    const chromeUrl = "googlechrome://navigate?url=" + encodeURIComponent(storeUrl);
-
-    document.getElementById("openStore").addEventListener("click", () => {
-      const ua = navigator.userAgent.toLowerCase();
-      if (ua.includes("tiktok") || ua.includes("instagram")) {
-        // Ouvre d'abord dans Chrome (ou navigateur par défaut)
-        window.location.href = chromeUrl;
-        // Fallback si l’intent échoue
-        setTimeout(() => { window.location.href = storeUrl; }, 800);
-      } else {
-        window.location.href = storeUrl;
-      }
-    });
+    function openStore() {
+      window.open("https://play.google.com/store/apps/details?id=com.app.surpriz", "_blank");
+    }
   </script>
 </body>
 </html>
