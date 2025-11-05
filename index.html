@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nom de l'application</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            margin-top: 80px;
-        }
-        img {
-            width: 150px;
-            height: auto;
-        }
-        .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 0;
-    background: none;
-    border: none;
-}
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Télécharger Surpriz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      margin-top: 80px;
+    }
+    img {
+      width: 150px;
+      height: auto;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 0;
+      background: none;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://play-lh.googleusercontent.com/nLSr9LB0QOH3YgiVhTcLR0vRsicCf3THbL0Hh72qM6pDjNGdcUcvMaom9WObWYYiNSGut5KzwtSOrMaqU3n-0w=w240-h480-rw" alt="Logo App">
-        <h1>Télécharger Surpriz</h1>
-        <a class="btn" href="https://play.app.goo.gl/?link=https://play.google.com/store/apps/details?id=com.app.surpriz" target="_blank"><img src="https://logo-marque.com/wp-content/uploads/2020/11/Google-Play-Logo.png" alt="Play Store" style="width:180px; height:auto;"></a>
-    </div>
- 
+  <div class="container">
+    <img src="https://play-lh.googleusercontent.com/nLSr9LB0QOH3YgiVhTcLR0vRsicCf3THbL0Hh72qM6pDjNGdcUcvMaom9WObWYYiNSGut5KzwtSOrMaqU3n-0w=w240-h480-rw" alt="Logo App">
+    <h1>Télécharger Surpriz</h1>
+    <button class="btn" id="openStore">
+      <img src="https://logo-marque.com/wp-content/uploads/2020/11/Google-Play-Logo.png" alt="Play Store" style="width:180px; height:auto;">
+    </button>
+  </div>
+
+  <script>
+    const storeUrl = "https://play.google.com/store/apps/details?id=com.app.surpriz";
+    const intentUrl = "intent://details?id=com.app.surpriz#Intent;scheme=market;package=com.android.vending;end";
+
+    document.getElementById("openStore").addEventListener("click", () => {
+      // Si TikTok ou Instagram, on tente de sortir du WebView
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.includes("tiktok") || ua.includes("instagram")) {
+        window.location.href = intentUrl;
+        setTimeout(() => { window.location.href = storeUrl; }, 800);
+      } else {
+        window.location.href = storeUrl;
+      }
+    });
+  </script>
 </body>
 </html>
-
-
-
