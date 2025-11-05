@@ -12,13 +12,8 @@
       margin: 0;
       padding: 0;
     }
-    .container {
-      margin-top: 80px;
-    }
-    img {
-      width: 150px;
-      height: auto;
-    }
+    .container { margin-top: 80px; }
+    img { width: 150px; height: auto; }
     .btn {
       display: inline-block;
       margin-top: 20px;
@@ -39,13 +34,14 @@
 
   <script>
     const storeUrl = "https://play.google.com/store/apps/details?id=com.app.surpriz";
-    const intentUrl = "intent://details?id=com.app.surpriz#Intent;scheme=market;package=com.android.vending;end";
+    const chromeUrl = "googlechrome://navigate?url=" + encodeURIComponent(storeUrl);
 
     document.getElementById("openStore").addEventListener("click", () => {
-      // Si TikTok ou Instagram, on tente de sortir du WebView
       const ua = navigator.userAgent.toLowerCase();
       if (ua.includes("tiktok") || ua.includes("instagram")) {
-        window.location.href = intentUrl;
+        // Ouvre d'abord dans Chrome (ou navigateur par défaut)
+        window.location.href = chromeUrl;
+        // Fallback si l’intent échoue
         setTimeout(() => { window.location.href = storeUrl; }, 800);
       } else {
         window.location.href = storeUrl;
