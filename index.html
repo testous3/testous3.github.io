@@ -99,9 +99,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             animation: bounce 2s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @keyframes bounce {
@@ -482,7 +488,9 @@
         <div class="floating-emoji emoji-4">⭐</div>
 
         <div class="hero-content">
-            <div class="logo">🎰</div>
+            <div class="logo">
+                <img src="https://play-lh.googleusercontent.com/nLSr9LB0QOH3YgiVhTcLR0vRsicCf3THbL0Hh72qM6pDjNGdcUcvMaom9WObWYYiNSGut5KzwtSOrMaqU3n-0w=w240-h480-rw" alt="Surpriz Logo" />
+            </div>
             <h1>Surpriz</h1>
             <p class="tagline">Tournez la roue et gagnez des cadeaux incroyables !</p>
 
