@@ -1,6 +1,6 @@
 {
   "minVersion": "1.2.3",
   "subscriptionEnabled": false,
-  "freeTrialDurationSeconds": 180,
+  "freeTrialDurationSeconds": 300,
   "debounceDelay": 300
 }
