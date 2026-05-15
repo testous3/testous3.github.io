@@ -2,5 +2,6 @@
   "minVersion": "1.2.6",
   "subscriptionEnabled": true,
   "freeTrialDurationSeconds": 700800,
-  "debounceDelay": 500
+  "debounceDelay": 500,
+   "aiPrompt": "Extract from VTC text: price, 1st address=departure, 2nd address=destination.\n{{OCR_TEXT}}\nReturn JSON only: {\"price\":12.5,\"departureAddress\":\"...\",\"destinationAddress\":\"...\"}"
 }
