@@ -3,6 +3,6 @@
   "subscriptionEnabled": true,
   "freeTrialDurationSeconds": 700800,
   "debounceDelay": 500,
-    "aiPrompt": "Extract price, first address as departureAddress, second address as destinationAddress.\n\nRules:\n- Return ONLY valid JSON\n- No markdown, no explanation\n- price must be a number (convert comma to dot)\n- If missing value, use null\n\nOCR TEXT:\n{{OCR_TEXT}}",
+   "aiPrompt": "Extract : price, 1st address=departure, 2nd address=destination.\n{{OCR_TEXT}}\nReturn JSON only: {\"price\":12.5,\"departureAddress\":\"...\",\"destinationAddress\":\"...\"}"
 
 }
