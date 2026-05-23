@@ -1,7 +1,7 @@
 {
   "minVersion": "1.3.1",
   "subscriptionEnabled": true,
-  "freeTrialDurationSeconds": 36000,
+  "freeTrialDurationSeconds": 0,
   "debounceDelay": 700,
   "captureInterval": 900,
   "aiPrompt1": "Extract : price, departureAddress, destinationAddress.\n{{OCR_TEXT}}\nReturn JSON only: {\"price\":12.5,\"departureAddress\":\"...\",\"destinationAddress\":\"...\"}",
