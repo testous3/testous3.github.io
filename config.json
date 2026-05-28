@@ -5,6 +5,6 @@
   "debounceDelay": 700,
   "captureInterval": 900,
   "aiPrompt1": "Extract : price, departureAddress, destinationAddress.\n{{OCR_TEXT}}\nReturn JSON only: {\"price\":12.5,\"departureAddress\":\"...\",\"destinationAddress\":\"...\"}",
-  "aiPrompt": "Extrait: prix, adresse départ, adresse arrivée. L'adresse de départ apparaît avant l'adresse d'arrivée dans le texte OCR.Les adresses apparaissent généralement après le prix. \n%TEXT%\nJSON uniquement (sans markdown): {\"price\": 12.5, \"departureAddress\": \"...\", \"destinationAddress\": \"...\"}\nNull si manquant."
+  "aiPrompt": "Extrait: prix, adresse départ, adresse arrivée. L'adresse de départ apparaît avant l'adresse d'arrivée dans le texte OCR.Les adresses apparaissent généralement après le prix et apres la note (étoile). \n%TEXT%\nJSON uniquement (sans markdown): {\"price\": 12.5, \"departureAddress\": \"...\", \"destinationAddress\": \"...\"}\nNull si manquant."
 
 }
